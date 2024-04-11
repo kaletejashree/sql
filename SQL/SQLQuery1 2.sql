@@ -74,13 +74,13 @@ create table movie_cast (
 );
 drop table movie_cast;
 
-insert into actor(act_id,act_fname,act_lname,act_gender) values ('John', 'Doe', 'M'),('Tej', 'Kale', 'F'),('ritz', 'patel', 'M'),('Janvhi', 'Dongriya', 'F');
-insert into genre(gen_id,gen_title) values ( 'Action'),('Comedy'),('Drama'),('History');
+insert into actor values ('John', 'Doe', 'M'),('Tej', 'Kale', 'F'),('ritz', 'patel', 'M'),('Janvhi', 'Dongriya', 'F');
+insert into genre values ( 'Action'),('Comedy'),('Drama'),('Action');
 insert into director values ('Jane', 'Doe'),('ritz', 'patel'),('Tej', 'Kale'),('jjj','shinde');
-insert into movie values ('Sample Movie', 1999, 120, 'English', '1999-01-01', 'USA'),('Comedy Movie', 2024, 160, 'Hindi', '2024-07-01', 'Gujarat'),('Mystery Movies', 1999, 120, 'English', '1999-01-01', 'USA'),('Mystery Movies', 2000, 160, 'Hindi', '2000-01-01', 'Mumbai');
+insert into movie values ('Sample Movie', 1999, 120, 'English', '1999-01-01', 'USA'), ('Action Movie', 1998, 130, 'Marathi', '1998-02-12', 'Mumbai'), ('Drama Movie', 2021, 150, 'English', '2021-12-30', 'USA'), ('Comedy Movie', 2024, 160, 'Hindi', '2024-07-01', 'Gujarat');
 insert into movie_genres values (901, 904),(902, 903),(903, 902),(904, 901);
 insert into movie_direction values (904, 901),(903, 902),(902, 903),(901, 904);
-insert into reviewer values (1, 'Reviewer 2'),(2, 'Reviewer 2'),(3, 'Reviewer 3'),(4, 'Reviewer 4'), (5, 'Reviewer 5'),(6, 'Reviewer 6');
+insert into reviewer values (1, 'Reviewer 2'),(2, 'Reviewer 2'),(3, 'Reviewer 3'),(4, 'Reviewer 4');
 insert into rating values (901, 4, 5, 10),(902, 3, 4, 15),(903, 2, 3, 1),(904, 1, 5, 10);
 insert into movie_cast values (902, 904, 'Lead Actor'),(901, 903, 'Main'),(904, 901, 'Lead Actor'),(903, 902, 'dancer');
 --insert into movie values ('Mystery Movies', 1999, 120, 'English', '1999-01-01', 'USA'),('Mystery Movies', 2000, 160, 'Hindi', '2000-01-01', 'Mumbai');
@@ -117,6 +117,7 @@ where mov_year <1998;
 select mov_title from movie
 union
 select rev_name from reviewer;
+
 --6. From the following table, write a SQL query to find all reviewers who have rated seven or more stars to their rating. Return reviewer name.
 select rev_name from reviewer join rating
 on reviewer.rev_id = rating.rev_id
@@ -268,6 +269,14 @@ group by  m.mov_id,m.mov_title,m.mov_year,m.mov_time,m.mov_lang,m.mov_dt_rel,m.m
 order by countact desc;
 
 --21. create a function to get reviewer that has rated highest number of movies
+
+select rw.rev_id,rw.rev_name from reviewer as rw inner join rating as r
+on rw.rev_id=r.rev_id
+inner join movie as m on m.mov_id=r.mov_id
+group by  rw.rev_id,rw.rev_name
+order by r.num_o_rating asc;
+
+
 
 --22. From the following tables, write a query in SQL to generate a report, which contain the fields movie title, name of the female actor, year of the movie, role, movie genres, the director, date of release, and rating of that movie.
 

@@ -1,0 +1,37 @@
+CREATE TABLE customers
+
+CREATE TABLE orders
+
+Create TABLE Products 
+
+----Insert 20 records in it both the table are refereing each others.
+
+Relations are : 
+
+Orders Contains ProductId
+Orders Contains CustomerId
+
+
+1.Create a stored procedure called "get_customers" that returns all customers from the "customers" table.
+2.Create a stored procedure called "get_orders" that returns all orders from the "orders" table.
+3.Create a stored procedure called "get_order_details" that accepts an order ID as a parameter and returns the details of that order (i.e., the products and quantities).
+4.Create a stored procedure called "get_customer_orders" that accepts a customer ID as a parameter and returns all orders for that customer.
+5.Create a stored procedure called "get_order_total" that accepts an order ID as a parameter and returns the total amount of the order.
+6.Create a stored procedure called "get_product_list" that returns a list of all products from the "products" table.
+7.Create a stored procedure called "get_product_info" that accepts a product ID as a parameter and returns the details of that product.
+8.Create a stored procedure called "get_customer_info" that accepts a customer ID as a parameter and returns the details of that customer.
+9.Create a stored procedure called "update_customer_info" that accepts a customer ID and new information as parameters and updates the customer's information in the "customers" table.
+10.Create a stored procedure called "delete_customer" that accepts a customer ID as a parameter and deletes that customer from the "customers" table.
+11.Create a stored procedure called "get_order_count" that accepts a customer ID as a parameter and returns the number of orders for that customer.
+12.Create a stored procedure called "get_customer_balance" that accepts a customer ID as a parameter and returns the customer's balance (i.e., the total amount of all orders minus the total amount of all payments).
+13.Create a stored procedure called "get_customer_payments" that accepts a customer ID as a parameter and returns all payments made by that customer.
+14.Create a stored procedure called "add_customer" that accepts a name and address as parameters and adds a new customer to the "customers" table.
+15.Create a stored procedure called "get_top_products" that returns the top 10 products based on sales volume.
+16.Create a stored procedure called "get_product_sales" that accepts a product ID as a parameter and returns the total sales volume for that product.
+17.Create a stored procedure called "get_customer_orders_by_date" that accepts a customer ID and date range as parameters and returns all orders for that customer within the specified date range.
+18.Create a stored procedure called "get_order_details_by_date" that accepts an order ID and date range as parameters and returns the details of that order within the specified date range.
+19.Create a stored procedure called "get_product_sales_by_date" that accepts a product ID and date range as parameters and returns the total sales volume for that product within the specified date range.
+20.Create a stored procedure called "get_customer_balance_by_date" that accepts a customer ID and date range as parameters and returns the customer's balance within the specified date range.
+21.Create a stored procedure called "add_order" that accepts a customer ID, order date, and total amount as parameters and adds a new order to the "orders" table.
+22.Create a stored procedure called "update_order_total" that accepts an order ID and a new total amount as parameters and updates the total amount of the order in the "orders" table.
+23.Create a stored procedure called "delete_order" that accepts an order ID as a parameter and deletes that order from the "orders" table.
